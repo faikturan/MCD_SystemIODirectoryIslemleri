@@ -14,7 +14,9 @@ namespace MCD_SystemIODirectoryIslemleri
             //YeniKlasorOlustur("c:\\NetworkAkademi");
             //KlasorVarlikKontrolu("c:\\NetworkAkademi");
             //KlasorSilmeIslemleri("c:\\NetworkAkademi");
-            KlasorTasimaIslemleri("c:\\TasimaIslemi\\NetworkAkademi", "c:\\NetworkAkademi");
+            //KlasorTasimaIslemleri("c:\\TasimaIslemi\\NetworkAkademi", "c:\\NetworkAkademi");
+
+            OdevI();
 
             Console.ReadLine();
             
