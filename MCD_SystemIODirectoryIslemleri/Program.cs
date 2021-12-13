@@ -63,10 +63,18 @@ namespace MCD_SystemIODirectoryIslemleri
                     Console.WriteLine(dosyaYol + " sisteminize oluşturuluyor");
                     Directory.CreateDirectory(dosyaYol);
                 }
+                else
+                {
+                    Console.WriteLine("İşlem Bitti.");
+                }
             }
             else
             {
-
+                DirectoryInfo DI = Directory.CreateDirectory(dosyaYol);
+                if (DI.Exists)
+                {
+                    Console.WriteLine("Dosya sitemde oluşturuldu.");
+                }
             }
         }
     }
