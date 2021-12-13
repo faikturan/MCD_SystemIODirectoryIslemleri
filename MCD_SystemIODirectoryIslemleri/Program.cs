@@ -14,7 +14,7 @@ namespace MCD_SystemIODirectoryIslemleri
             //YeniKlasorOlustur("c:\\NetworkAkademi");
             //KlasorVarlikKontrolu("c:\\NetworkAkademi");
             //KlasorSilmeIslemleri("c:\\NetworkAkademi");
-            KlasorTasimaIslemleri("c:\\NetworkAkademi", "c:\\TasimaIslemi\\NetworkAkademi");
+            KlasorTasimaIslemleri("c:\\TasimaIslemi\\NetworkAkademi", "c:\\NetworkAkademi");
 
             Console.ReadLine();
             
@@ -42,6 +42,32 @@ namespace MCD_SystemIODirectoryIslemleri
             Directory.Move(kaynak, hedef);
         }
 
+        static void OdevI()
+        {
+            /*
+             * C sürücüsü içerisinde NetworkAkademi adında bir klasör oluşturun oluşturmadan önce varlık kontrolü yapın eğer klasör var ise silin silerken yine kullanıcıdan silmek istiyormusunuz diye E/H ile kontrol sağlayın daha sonra oluşturun. eğer klasör yok ise oluşturun fakat adımların bilgisini ekrana yazdırın.
+             */
 
+            string dosyaYol = "c:\\NetworkAkademi";
+            bool kontrol = Directory.Exists(dosyaYol);
+            if (kontrol)
+            {
+                Console.WriteLine("Eklemek istediğiniz klasör sistemde mevcut.");
+                Console.WriteLine("Silmek ve yerine yeni olarak oluşturmak istiyor musunuz [E/H]");
+                string cevap = Console.ReadLine().ToUpper();
+                if (cevap == "E")
+                {
+                    Directory.Delete(dosyaYol, true);
+                    Console.WriteLine("Dosya silme işlemi tamamlandı");
+                    System.Threading.Thread.Sleep(2000);
+                    Console.WriteLine(dosyaYol + " sisteminize oluşturuluyor");
+                    Directory.CreateDirectory(dosyaYol);
+                }
+            }
+            else
+            {
+
+            }
+        }
     }
 }
