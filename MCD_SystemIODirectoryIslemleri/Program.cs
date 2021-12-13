@@ -12,6 +12,12 @@ namespace MCD_SystemIODirectoryIslemleri
         static void Main(string[] args)
         {
             //YeniKlasorOlustur("c:\\NetworkAkademi");
+            //KlasorVarlikKontrolu("c:\\NetworkAkademi");
+            //KlasorSilmeIslemleri("c:\\NetworkAkademi");
+            KlasorTasimaIslemleri("c:\\NetworkAkademi", "c:\\TasimaIslemi\\NetworkAkademi");
+
+            Console.ReadLine();
+            
            
         }
 
@@ -20,7 +26,21 @@ namespace MCD_SystemIODirectoryIslemleri
             DirectoryInfo DI = Directory.CreateDirectory(path);
         }
 
+        static void KlasorVarlikKontrolu(string path)
+        {
+            bool kontrol = Directory.Exists(path);
+            Console.WriteLine(kontrol);
+        }
 
+        static void KlasorSilmeIslemleri(string path)
+        {
+            Directory.Delete(path,true);
+        }
+
+        static void KlasorTasimaIslemleri(string kaynak, string hedef)
+        {
+            Directory.Move(kaynak, hedef);
+        }
 
 
     }
